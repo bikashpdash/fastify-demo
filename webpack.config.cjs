@@ -2,11 +2,11 @@ const path =require('path');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-    mode: 'production',
     entry: './src/main.mjs',
-    externals: [nodeExternals()],
+    mode:'development',
+    target: 'node', // support native modules
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'main.bundle.cjs',
-    },
-};
+      filename: 'main.bundle.cjs',
+      path: path.resolve(__dirname, 'dist')
+    }
+  }

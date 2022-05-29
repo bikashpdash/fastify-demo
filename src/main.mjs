@@ -8,13 +8,13 @@ fastify.get('/', (request, reply)=> {
   reply.send({ hello: 'world' })
 })
 
-fastify.get('/query',  (request, reply)=> {
-    
+fastify.get('/query',  (request, reply)=> {    
     reply.send(request.query)
   })
 
+const PORT = process.env.APP_PORT || 3000;
 // Run the server!
-fastify.listen(3000, function (err, address) {
+fastify.listen(PORT, function (err, address) {
   if (err) {
     fastify.log.error(err)
     process.exit(1)
